@@ -48,3 +48,32 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.5 });
 counters.forEach((counter) => observer.observe(counter));
+
+
+
+
+
+
+
+
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var message = document.getElementById("message").value;
+
+   var whatsappNumber = "905373795952"; // رقم الواتس المراد الإرسال إليه
+
+    var text =
+      "New Contact Message:%0A%0A" +
+      "Name: " + name + "%0A" +
+      "Email: " + email + "%0A" +
+      "Phone: " + phone + "%0A" +
+      "Message: " + message;
+
+    var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+
+    window.open(url, "_blank");
+});
