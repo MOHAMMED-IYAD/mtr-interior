@@ -14,8 +14,9 @@ body {
 body.ar {
   font-family: "Tajawal", sans-serif;
   font-size: 22px; /* يكبر شوي للغة العربية */
-  padding-top: 150px; /* first-nav + navbar */
+  /* /* padding-top: 150px;  */
 }
+
 
 .carousel-item img,
 .carousel-item video {
@@ -23,17 +24,15 @@ body.ar {
   height: auto;
 }
 
-body {
-  padding-top: 100px;
-}
+
 
 @media (max-width: 768px) {
   body {
-    padding-top: 140px;
+    padding-top: 130px;
   }
 }
 .first-nav {
-  background-color: #0f172a;
+   background-color: #000000;
   padding: 12px 0;
   position: relative;
   z-index: 1;
@@ -58,20 +57,18 @@ body {
 }
 
 .first-nav li a:hover {
-  color: #06b6d4; /* لون عند المرور */
+  color:#868c94; /* لون عند المرور */
 }
 
 .navbar {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
-  background-color: transparent;
-  position: fixed !important;
-  top: 48px; /* نفس ارتفاع first-nav */
+  position: relative;
+  top: 0;
   width: 100%;
   z-index: 1050;
   background-color: var(--accent-color);
-  padding: 15px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 .navbar.scrolled {
   background-color: black;
