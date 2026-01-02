@@ -17,14 +17,11 @@ body.ar {
   /* /* padding-top: 150px;  */
 }
 
-
 .carousel-item img,
 .carousel-item video {
   max-width: 100%;
   height: auto;
 }
-
-
 
 @media (max-width: 768px) {
   body {
@@ -32,7 +29,7 @@ body.ar {
   }
 }
 .first-nav {
-   background-color: #000000;
+  background-color: #000000;
   padding: 12px 0;
   position: relative;
   z-index: 1;
@@ -57,7 +54,24 @@ body.ar {
 }
 
 .first-nav li a:hover {
-  color:#868c94; /* لون عند المرور */
+  color: #868c94; /* لون عند المرور */
+}
+
+.first-nav a.best {
+  color: #cad6e6; /* نص أبيض */
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none; /* نشيل الخط الافتراضي */
+
+  /* خط تحت النص */
+  border-bottom: 3px solid #3c1010; /* برتقالي غامق */
+  padding-bottom: 3px; /* مسافة بسيطة بين النص والخط */
+
+  transition: border-color 0.3s;
+}
+
+.first-nav a.best:hover {
+  border-color: #240a0a; /* يصبح أفتح شوي عند المرور */
 }
 
 .navbar {
