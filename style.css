@@ -14,7 +14,7 @@ body {
 body.ar {
   font-family: "Tajawal", sans-serif;
   font-size: 22px; /* يكبر شوي للغة العربية */
-  /* direction: rtl; */
+  padding-top: 150px; /* first-nav + navbar */
 }
 
 .carousel-item img,
@@ -27,10 +27,17 @@ body {
   padding-top: 100px;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-top: 140px;
+  }
+}
+
 .first-nav {
-  background-color: #0f172a; /* لون الخلفية */
-  padding: 12px 0; /* مسافة فوق وتحت */
-  /* يخلي العناصر بالنص */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
 }
 
 .first-nav ul {
@@ -60,11 +67,12 @@ body {
   padding-bottom: 15px !important;
   background-color: transparent;
   position: fixed !important;
-  top: 0;
+
   width: 100%;
   background-color: var(--accent-color);
   padding: 15px;
   transition: all 0.3s ease;
+  top: 50px;
   z-index: 1050;
 }
 .navbar.scrolled {
@@ -75,7 +83,7 @@ body {
 
 .navbar .container-fluid {
   /* padding-top: 20px;
-  padding-bottom: 20px; */
+    padding-bottom: 20px; */
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -125,6 +133,9 @@ body.ar .nav-link {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    top: 45px;
+  }
   .navbar-nav {
     margin-left: 0;
     margin-right: auto;
@@ -153,7 +164,7 @@ body.ar .nav-link {
 }
 
 /*
-NAVBAR */
+    NAVBAR */
 
 /* ABOUT */
 /* HERO MAIN */
@@ -940,10 +951,10 @@ body.ar .contact .call a {
 }
 
 /* .contact .info input {
-    padding: 10px 100px;
-    border-radius: 10px;
-    margin-top: 20px;
-} */
+        padding: 10px 100px;
+        border-radius: 10px;
+        margin-top: 20px;
+    } */
 
 .contact .info .input {
   padding: 10px 100px !important;
