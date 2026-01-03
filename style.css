@@ -23,11 +23,7 @@ body.ar {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 130px;
-  }
-}
+
 .first-nav {
   background-color: #000000;
   padding: 12px 0;
@@ -64,21 +60,21 @@ body.ar {
   text-decoration: none; /* نشيل الخط الافتراضي */
 
   /* خط تحت النص */
-  border-bottom: 3px solid #3c1010; /* برتقالي غامق */
+  border-bottom: 3px solid #3f300a; /* برتقالي غامق */
   padding-bottom: 3px; /* مسافة بسيطة بين النص والخط */
 
   transition: border-color 0.3s;
 }
 
 .first-nav a.best:hover {
-  border-color: #240a0a; /* يصبح أفتح شوي عند المرور */
+  border-color: #534b37; /* يصبح أفتح شوي عند المرور */
 }
 
 .navbar {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
   position: relative;
-  top: 0;
+  top: 0 !important;
   width: 100%;
   z-index: 1050;
   background-color: var(--accent-color);
@@ -91,8 +87,6 @@ body.ar {
 }
 
 .navbar .container-fluid {
-  /* padding-top: 20px;
-    padding-bottom: 20px; */
   padding-left: 100px;
   padding-right: 100px;
 }
