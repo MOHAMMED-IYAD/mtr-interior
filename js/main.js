@@ -1,18 +1,20 @@
-// Navbar scroll effect
+//// Navbar scroll effect
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
-  window.scrollY > 500 ? navbar.classList.add("scrolled") : navbar.classList.remove("scrolled");
+  window.scrollY > 500
+    ? navbar.classList.add("scrolled")
+    : navbar.classList.remove("scrolled");
 });
 
-// AOS init
+//// AOS init
 AOS.init();
 
-// Slick carousel
+//// Slick Card Carousel
 $(document).ready(function () {
   $(".card-carousel").slick({
     slidesToShow: 3,
     autoplay: true,
-    autoplaySpeed: 1200,
+    autoplaySpeed: 2000,
     arrows: false,
     infinite: true,
     responsive: [
@@ -22,7 +24,7 @@ $(document).ready(function () {
   });
 });
 
-// Counter animation
+//// Counter animation
 const counters = document.querySelectorAll(".counter");
 const startCounter = (counter) => {
   const target = +counter.getAttribute("data-target");
@@ -39,86 +41,60 @@ const startCounter = (counter) => {
   };
   update();
 };
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      startCounter(entry.target);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
 counters.forEach((counter) => observer.observe(counter));
 
-<<<<<<< HEAD
-// WhatsApp Form
-document.getElementById("whatsappForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
-  var message = document.getElementById("message").value;
-
-  var whatsappNumber = "905373795952"; // رقم الواتس المراد الإرسال إليه
-
-  var text =
-    "New Contact Message:%0A%0A" +
-    "Name: " + name + "%0A" +
-    "Email: " + email + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Message: " + message;
-
-  var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
-
-  window.open(url, "_blank"); 
-});
-
-// ----------------------
-// Carousel video control
-// ----------------------
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.getElementById("carouselExampleCaptions");
-  const video = document.getElementById("heroVideo");
-
-  if (carousel && video) {
-    // إيقاف التنقل التلقائي للكاروسيل
-    const bsCarousel = new bootstrap.Carousel(carousel, {
-      interval: false,
-      ride: false
-    });
-
-    // بعد ما الفيديو يخلص، ينتقل للعنصر التالي
-    video.addEventListener("ended", () => {
-      bsCarousel.next();
-    });
-  }
-=======
-
-
-
-
-
-
-
-document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+//// WhatsApp Form
+const whatsappForm = document.getElementById("whatsappForm");
+if (whatsappForm) {
+  whatsappForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var message = document.getElementById("message").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
 
-   var whatsappNumber = "905373795952"; // رقم الواتس المراد الإرسال إليه
-
-    var text =
+    const whatsappNumber = "905373795952";
+    const text =
       "New Contact Message:%0A%0A" +
       "Name: " + name + "%0A" +
       "Email: " + email + "%0A" +
       "Phone: " + phone + "%0A" +
       "Message: " + message;
 
-    var url = "https://wa.me/" + whatsappNumber + "?text=" + text;
-
+    const url = "https://wa.me/" + whatsappNumber + "?text=" + text;
     window.open(url, "_blank");
->>>>>>> 442fc50bcdc2041380ebc06ca413ad3d73cf44f4
+  });
+}
+
+//// Bootstrap Video + Image Carousel
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.getElementById("carouselExampleCaptions");
+  const video = document.getElementById("heroVideo");
+
+  if (carousel) {
+    const bsCarousel = new bootstrap.Carousel(carousel, {
+      interval: false,
+      ride: false,
+    });
+
+    if (video) {
+      video.addEventListener("ended", () => {
+        bsCarousel.next();
+      });
+      video.removeAttribute("controls");
+      video.setAttribute("playsinline", "true");
+    }
+  }
 });
