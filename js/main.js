@@ -81,10 +81,10 @@ if (whatsappForm) {
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("carouselExampleCaptions");
   if (carousel) {
-    const bsCarousel = new bootstrap.Carousel(carousel, {
-      interval: 3000, // كل 3 ثواني يتحرك
-      ride: "carousel", // يبدأ مباشرة
-      wrap: true // يرجع لأول صورة بعد الأخيرة
+    new bootstrap.Carousel(carousel, {
+      interval: 3000, // كل 3 ثواني
+      ride: "carousel",
+      wrap: true
     });
   }
 });
