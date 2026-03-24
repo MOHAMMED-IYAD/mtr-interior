@@ -1,6 +1,6 @@
 
 (function(){
-//// Navbar scroll effect
+
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
   window.scrollY > 500
@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
     : navbar.classList.remove("scrolled");
 });
 
-//// AOS init
+
 AOS.init();
 
 //// Slick Card Carousel
