@@ -78,23 +78,13 @@ if (whatsappForm) {
   });
 }
 
-//// Bootstrap Video + Image Carousel
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.getElementById("carouselExampleCaptions");
-  const video = document.getElementById("heroVideo");
-
   if (carousel) {
     const bsCarousel = new bootstrap.Carousel(carousel, {
-      interval: false,
-      ride: false,
+      interval: 3000, // كل 3 ثواني يتحرك
+      ride: "carousel", // يبدأ مباشرة
+      wrap: true // يرجع لأول صورة بعد الأخيرة
     });
-
-    if (video) {
-      video.addEventListener("ended", () => {
-        bsCarousel.next();
-      });
-      video.removeAttribute("controls");
-      video.setAttribute("playsinline", "true");
-    }
   }
 });
