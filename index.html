@@ -96,7 +96,13 @@ NAVBAR  -->
     class="carousel slide"
   >
     <div class="carousel-inner">
+
       <div class="carousel-item active">
+  <video class="d-block w-100" autoplay muted playsinline id="heroVideo">
+    <source src="image/0324.mp4" type="video/mp4" />
+  </video>
+</div>
+      <div class="carousel-item ">
         <img src="image/one.png" class="d-block w-100" alt="Slide 1" />
         <div class="carousel-caption">
           <h5>Comfort and elegance for every room</h5>
@@ -143,17 +149,6 @@ NAVBAR  -->
   </div>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var carouselEl = document.getElementById('carouselExampleCaptions');
-    var carousel = new bootstrap.Carousel(carouselEl, {
-      interval: 3000, // كل 3 ثواني يتحرك
-      ride: 'carousel', // تشغيل تلقائي
-      pause: false,    // عدم التوقف عند hover
-      wrap: true       // العودة للصورة الأولى بعد الأخيرة
-    });
-  });
-</script>
 
     <!-- HERO -->
 

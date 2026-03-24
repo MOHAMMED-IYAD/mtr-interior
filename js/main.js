@@ -1,6 +1,6 @@
-
 (function(){
 
+// Navbar scroll effect
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
   window.scrollY > 500
@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
     : navbar.classList.remove("scrolled");
 });
 
-
+// AOS init
 AOS.init();
 
 //// Slick Card Carousel
@@ -43,6 +43,7 @@ const startCounter = (counter) => {
   };
   update();
 };
+
 const observer = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
@@ -54,6 +55,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.5 }
 );
+
 counters.forEach((counter) => observer.observe(counter));
 
 //// WhatsApp Form
@@ -80,24 +82,30 @@ if (whatsappForm) {
   });
 }
 
-//// Bootstrap Video + Image Carousel
-document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.getElementById("carouselExampleCaptions");
-  const video = document.getElementById("heroVideo");
+//// Bootstrap Video + Image Carousel (المعدل)
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselEl = document.getElementById('carouselExampleCaptions');
+  const video = document.getElementById('heroVideo');
 
-  if (carousel) {
-    const bsCarousel = new bootstrap.Carousel(carousel, {
-      interval: false,
-      ride: false,
+  if (!carouselEl) return;
+
+  const carousel = new bootstrap.Carousel(carouselEl, {
+    interval: false, // وقف التبديل التلقائي بالبداية
+    ride: false,
+    pause: false,
+    wrap: true
+  });
+
+  // لما يخلص الفيديو → روح للسلايد اللي بعده
+  if (video) {
+    video.addEventListener("ended", function () {
+      carousel.next();
+
+      // بعد الفيديو شغّل الحركة التلقائية للصور
+      carousel._config.interval = 3000;
+      carousel.cycle();
     });
-
-    if (video) {
-      video.addEventListener("ended", () => {
-        bsCarousel.next();
-      });
-      video.removeAttribute("controls");
-      video.setAttribute("playsinline", "true");
-    }
   }
 });
-})()
+
+})();
